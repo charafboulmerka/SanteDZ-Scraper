@@ -1,0 +1,23 @@
+{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""LocalBusiness"",
+  ""@id"": ""https://annumed.sante-dz.com/pharmacie/kaci-fatima"",
+  ""name"": ""KACI FATIMA"",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""<div class=""quota__exceeded--info"">L'adresse est désactivé <span class=""tool-tip more-info"" title=""L'adresse est désactivé"">plus d'info</span></div>"",
+    ""addressLocality"": ""Alger-Centre"",
+    ""addressRegion"": ""Alger"",
+    ""postalCode"": ""16000"",
+    ""addressCountry"": ""DZ""
+  },
+  ""geo"": {
+    ""@type"": ""GeoCoordinates"",
+    ""latitude"": 36.72585,
+    ""longitude"": 3.11865
+        },
+        ""image"": [
+          ""https://annumed.sante-dz.com/uploads/avatar/ph-min.webp""
+   ],
+  ""url"": ""https://annumed.sante-dz.com/pharmacie/kaci-fatima""                
+}

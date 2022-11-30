@@ -1,0 +1,187 @@
+id,name,address,wilaya_txt,commune_txt,code_postal,latitude,longitude,",allTagsTxt",link
+0,Dr,"Bab ezzouar, algeria",Alger,Bab Ezzouar,16000,36.7220182,3.1856806,Pédopsychiatre,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/dr-talbi-safa
+1,Dr,"Bab ezzouar, algeria",Alger,Bab Ezzouar,16000,36.7220182,3.1856806,Pédopsychiatre,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/dr-talbi-safa
+1,HOPITAL MAALEM LAHCEN DE GHAZAOUET,"Hopital maalem lahcen, ghazaouet",Tlemcen,Ghazaouet,13000,35.0886004,-1.8590182,Urgences Médicaux Chirurgicales|Pédiatrie|Médecine Interne|Gynéco-Obstetrique|Chirurgie Générale,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-maalem-lahcen-de-ghazaouet
+2,HOPITAL MAALEM LAHCEN DE GHAZAOUET,"Hopital maalem lahcen, ghazaouet",Tlemcen,Ghazaouet,13000,35.0886004,-1.8590182,Urgences Médicaux Chirurgicales|Pédiatrie|Médecine Interne|Gynéco-Obstetrique|Chirurgie Générale,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-maalem-lahcen-de-ghazaouet
+2,"EHU, D'ORAN","16, route sidi maarouf",Oran,Oran,31000,35.6976541,-0.6337376,Urgences Médicaux Chirurgicales|Rhumatologue|Traumatologue|Psychiatrie|Pneumologue|Pédiatrie|Orthopédie|ORL|Ophtalmologue|Neuro-Chirurgue|Médecine Interne|Hémodialyse|Gynéco-Obstetrique|Gastro-Entérologue|Endocrinologue|Dérmatologue|Chirurgie Plastique Reconstructrice|Chirurgie Pédiatrique|Chirurgie Générale|Chirurgie Cardio-Vasculaire|Chirurgie Cardiaque|Centre Anti-Poisons|Cardiologue|Cancérologie (Oncologie médicale)|Anesthésie - Réanimation,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-d-oran
+3,"EHU, D'ORAN","16, route sidi maarouf",Oran,Oran,31000,35.6976541,-0.6337376,Urgences Médicaux Chirurgicales|Rhumatologue|Traumatologue|Psychiatrie|Pneumologue|Pédiatrie|Orthopédie|ORL|Ophtalmologue|Neuro-Chirurgue|Médecine Interne|Hémodialyse|Gynéco-Obstetrique|Gastro-Entérologue|Endocrinologue|Dérmatologue|Chirurgie Plastique Reconstructrice|Chirurgie Pédiatrique|Chirurgie Générale|Chirurgie Cardio-Vasculaire|Chirurgie Cardiaque|Centre Anti-Poisons|Cardiologue|Cancérologie (Oncologie médicale)|Anesthésie - Réanimation,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-d-oran
+3,SEDJELMACI,"Tlemcen, tlemcen, algérie",Tlemcen,Tlemcen,13000,34.88109919999999,-1.3214546000000382,ORL - Chirurgien de la face et du cou,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/sedjelmaci
+4,SEDJELMACI,"Tlemcen, tlemcen, algérie",Tlemcen,Tlemcen,13000,34.88109919999999,-1.3214546000000382,ORL - Chirurgien de la face et du cou,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/sedjelmaci
+4,Benkamla.mohamed,Rue  du martyures  sidia akkacha  chlef,Chlef,Sidi Akkacha,2000,36.5139,2.417799999999943,Gynécologue,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/benkamla-mohamed
+5,Benkamla.mohamed,Rue  du martyures  sidia akkacha  chlef,Chlef,Sidi Akkacha,2000,36.5139,2.417799999999943,Gynécologue,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/benkamla-mohamed
+5,Ehu 1er novembre,Ehu oran,Oran,Oran,31000,35.703777,35.703777,,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-1er-novembre
+6,Ehu 1er novembre,Ehu oran,Oran,Oran,31000,35.703777,35.703777,,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-1er-novembre
+6,Lila guendouz,"Bouzareah, algérie",Alger,Bouzareah,16000,36.7816379,3.0125673999999663,Accueil Spécialisé|Allergologue|Anatomie|Anatomie Pathologique|Médecine Générale|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/lila-guendouz
+7,Lila guendouz,"Bouzareah, algérie",Alger,Bouzareah,16000,36.7816379,3.0125673999999663,Accueil Spécialisé|Allergologue|Anatomie|Anatomie Pathologique|Médecine Générale|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/lila-guendouz
+7,HOPITAL  EL HARRACH ( EX BELFORT ),El harrach,Alger,Alger-Centre,16000,36.7029047,3.1428341,Gynéco-Obstetrique|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-el-harrach-ex-belfort
+8,HOPITAL  EL HARRACH ( EX BELFORT ),El harrach,Alger,Alger-Centre,16000,36.7029047,3.1428341,Gynéco-Obstetrique|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-el-harrach-ex-belfort
+8,HOPITAL DE BITRARIA ( EL-BIAR ),,Alger,Alger-Centre,16000,36.7690092,3.0309946,Neurophysiologue|Chirurgie Générale|Chirurgie Pédiatrique|Médecine Interne|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-de-bitraria-el-biar
+9,HOPITAL DE BITRARIA ( EL-BIAR ),,Alger,Alger-Centre,16000,36.7690092,3.0309946,Neurophysiologue|Chirurgie Générale|Chirurgie Pédiatrique|Médecine Interne|Pédiatrie,https://annumed.sante-dz.com/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-de-bitraria-el-biar
+header
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+Voir le profil
+header
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/dr-talbi-safa"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-el-harrach-ex-belfort"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-de-bitraria-el-biar"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/lila-guendouz"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/benkamla-mohamed"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-1er-novembre"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-d-oran"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-maalem-lahcen-de-ghazaouet"" itemprop=""url"">Voir le profil</a>
+</div>"
+"<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/sedjelmaci"" itemprop=""url"">Voir le profil</a>
+</div>"
+header
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/dr-talbi-safa"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""5ojL2UiC9VZWwJTEnVnA81i5wHZRpAaz"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-el-harrach-ex-belfort"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""uNzd8AJE3pfyI2YbkRKEhlU6CNShYBg4"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-de-bitraria-el-biar"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""GP0k4qjiDICBDH8dHfHZpou8OyNx1PW0"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/lila-guendouz"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""k0lmSWcVUrdM3gjG1RtneGqaYmNVQIsu"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/benkamla-mohamed"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""XSK2J1Iko5HRUE7MRrwv2yGdiSaBtWre"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-1er-novembre"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""ciksHEhzbtrNvodLcge49jo7kF3Tga4m"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/ehu-d-oran"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""Z4eMvDe6fQu6ZE24zMojZitdFjiGjSox"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/hopital-maalem-lahcen-de-ghazaouet"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""2CqE4auUVS3vxGvDTJ8O5Vroluh2zCZt"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+"<div class=""col-lg-6 col-md-6 col-sm-12 col-xs-12 side-info clearfix"">
+<div class=""links__contact"">
+<a class=""btn btn-primary"" href=""/detail/etablissements-publics-hospitaliers-universitaires-ephu/sedjelmaci"" itemprop=""url"">Voir le profil</a>
+</div>
+<div class=""flag-error pt-12 text-left visible-sm visible-xs"">
+<a class=""signal-error"" data-id=""CG9qRJ9pfYRLNc5vaFnRELDGCp43bxi6"" href=""#"" title=""Suggérer une mise à jour""><i class=""fa fa-flag""></i> Suggérer une mise à jour</a>
+</div>
+</div>"
+info
+""
+""
+""
+""
+""
+""
+""
+""
+""
+info
+""
+""
+""
+""
+""
+""
+""
+""
+""
+info
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+"<p><a href=""/filter/type/ho"">Hôpital</a></p>"
+info
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+client_type
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+Hôpital
+phone
+"[<a class=""btn btn-primary link-phone"" data-entity=""5ojL2UiC9VZWwJTEnVnA81i5wHZRpAaz"" data-place=""9fg83HTETKG7qJRYZnEUdDNPPpzak2Gq"" href=""#"" itemprop=""telephone"" title=""Voir téléphone""><span class=""icon""><i aria-hidden=""true"" class=""fa fa-phone""></i> 123...
+            </span><span class=""text"">Voir téléphone</span></a>]"
+"[<a class=""btn btn-primary link-phone"" data-entity=""Z4eMvDe6fQu6ZE24zMojZitdFjiGjSox"" data-place=""e5y7y7DnTgkf5iM8eRcsSbldBCnnrYC6"" href=""#"" itemprop=""telephone"" title=""Voir téléphone""><span class=""icon""><i aria-hidden=""true"" class=""fa fa-phone""></i> +21...
+            </span><span class=""text"">Voir téléphone</span></a>]"
+"[<a class=""btn btn-primary link-phone"" data-entity=""CG9qRJ9pfYRLNc5vaFnRELDGCp43bxi6"" data-place=""fY4kgU5JOwZmP5kM5F4dISDwujNo4DFa"" href=""#"" itemprop=""telephone"" title=""Voir téléphone""><span class=""icon""><i aria-hidden=""true"" class=""fa fa-phone""></i> +21...
+            </span><span class=""text"">Voir téléphone</span></a>]"
