@@ -14,29 +14,23 @@ import html
 class TilesSpider(scrapy.Spider):
     name = 'clients'
     allowed_domains = ['annumed.sante-dz.com']
-    #start_urls = ['https://annumed.sante-dz.com']
-    #start_urls = ['https://annumed.sante-dz.com/annuaire/filter?term=&wilaya=&commune=&categorie=pharmacie&speciality=&distance=&page=1']
 
     def __init__(self, *args, **kwargs):  
-      self.mydb = mysql.connector.connect(user='root', password='',
+        self.mydb = mysql.connector.connect(user='root', password='',
                               host='127.0.0.1',
                               database='infy_projects')
+        # create infy_projects database if not exists
+        self.mycursor = self.mydb.cursor()
+        self.mycursor.execute("CREATE DATABASE IF NOT EXISTS infy_projects")
+        self.mycursor.execute("USE infy_projects")
 
-
-      self.mCount = 0                   
+        self.mCount = 0                   
 
     def start_requests(self):
-        #url = "https://annumed.sante-dz.com/annuaire/filter?term=&wilaya=&commune=&categorie=pharmacie&speciality=&distance=&page=1"
-        #url_profile = "https://annumed.sante-dz.com/detail/pharmacie/ouali"
-        #1434
-        #4303
-        for page in range(1,2):
+        for page in range(1,2681):
          url = f"https://annumed.sante-dz.com/annuaire/filter?term=&wilaya=&commune=&categorie=medecin&speciality=&distance=&page={page}"
          yield SeleniumRequest(url=url, callback=self.parse,screenshot=True, wait_time=10,wait_until=EC.element_to_be_clickable((By.CLASS_NAME, 'btn-primary')))
 
-        #set seleniumrequest with proxy
-        #yield scrapy.Request(url_profile,callback=self.getProfileData,meta={'dont_proxy': True})
-        #yield SeleniumRequest(url=url_profile, callback=self.getProfileData, wait_time=15,wait_until=EC.element_to_be_clickable((By.CLASS_NAME, 'btn-primary')))
 
   
 
@@ -55,14 +49,7 @@ class TilesSpider(scrapy.Spider):
             #get previous p tag
             client_type = header.find_previous('p').text
             profile_link = f"https://annumed.sante-dz.com{header.get('href')}"
-            #final_link = f"https://annumed.sante-dz.com{profile_link}"
-            #client_type = header[1].text
-            #parse profile link
-            #yield {'profile_link': profile_link}
             yield scrapy.Request(profile_link,callback=self.getProfileData,meta={'client_type':client_type})
-            #yield scrapy and send params
-            #yield scrapy.Request(profile_link,callback=self.getProfileData,meta={'client_type':client_type})
-            #yield SeleniumRequest(url=profile_link, callback=self.getProfileData, wait_time=15,wait_until=EC.element_to_be_clickable((By.CLASS_NAME, 'btn-primary')))
 
     def getWilayaIndex(self,wilaya_name):
         wilaya = ["Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar","Blida"
@@ -78,31 +65,27 @@ class TilesSpider(scrapy.Spider):
 
         
     def getProfileData(self, response):
-        #get client type
-        client_type = response.meta['client_type']
         department_id = 0
+        client_type = response.meta['client_type']
+
         if(client_type == "Pharmacie" or client_type == "pharmacie"):
             department_id = 2
         else:
             department_id = 3
+
         soup = BeautifulSoup(response.text, 'lxml')
         script = soup.find('script', type='application/ld+json').text
-        #"<div class=""quota__exceeded--info"">L'adresse est désactivé <span class=""tool-tip more-info"" title=""L'adresse est désactivé"">plus d'info</span></div>"
         #script replace div with span
         script = script.replace('<div class="quota__exceeded--info">L\'adresse est désactivé <span class="tool-tip more-info" title="L\'adresse est désactivé">plus d\'info</span></div>','')
         #regex script
         script = re.sub(r'[\t\n\r]', '', script)
-        #json_data = json.loads(re.sub(r"(\w+):", r'"\1":', script))
         
         json_data = json.loads(script)
-        #yield {'soup': json_data}
 
         name = json_data['name']
         address = html.unescape(json_data['address']['streetAddress'])
         wilaya_txt = html.unescape(json_data['address']['addressRegion'])
         wilaya_id = self.getWilayaIndex(wilaya_txt)
-        yield {'wilaya_txt':wilaya_txt,'wilaya_id':wilaya_id}
-        print(wilaya_id)
         commune_txt = html.unescape(json_data['address']['addressLocality'])
         code_postal = json_data['address']['postalCode']
 
@@ -117,6 +100,7 @@ class TilesSpider(scrapy.Spider):
             #add all spans to txt
             allTagsTxt += tag.find('span').text+"|"
         allTagsTxt = allTagsTxt[:-1]
+
         yield {'id':self.mCount,'name': name, 'address': address,'wilaya_txt':wilaya_txt,'commune_txt':commune_txt,
         'code_postal':code_postal, 'latitude': latitude, 'longitude': longitude,',allTagsTxt':allTagsTxt,'link': response.request.url}  
         mycursor = self.mydb.cursor()
@@ -127,16 +111,8 @@ class TilesSpider(scrapy.Spider):
         mycursor.execute(sql, val)
         self.mydb.commit()
         self.mCount=self.mCount+1
-        #current request link
-        yield {'link': response.request.url}
-        yield {'id':self.mCount,'name': name, 'address': address,'wilaya_txt':wilaya_txt,'commune_txt':commune_txt,
-        'code_postal':code_postal, 'latitude': latitude, 'longitude': longitude,',allTagsTxt':allTagsTxt,'client_type':client_type,'link': response.request.url}  
         print(mycursor.rowcount, "record inserted.")
-        print(self.mCount)
-        print(name,address,latitude,longitude)
-        #yield {'name': name, 'address': address, 'latitude': latitude, 'longitude': longitude}  
-
-        #get wilaya_index by wilaya name
+        print(self.mCount,name,address,latitude,longitude)
       
 
 
