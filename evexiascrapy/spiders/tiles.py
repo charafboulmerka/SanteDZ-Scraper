@@ -26,8 +26,7 @@ class TilesSpider(scrapy.Spider):
         self.mCount = 0                   
 
     def start_requests(self):
-        # for page in range(1,2681):
-            page = 1
+        for page in range(1,2681):
             url = f"https://annumed.sante-dz.com/annuaire/filter?term=&wilaya=&commune=&categorie=medecin&speciality=&distance=&page={page}"
             yield scrapy.Request(url=url, callback=self.parse)
         #  yield SeleniumRequest(url=url, callback=self.parse,screenshot=True, wait_time=10,wait_until=EC.element_to_be_clickable((By.CLASS_NAME, 'btn-primary')))
