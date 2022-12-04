@@ -11,7 +11,7 @@ BOT_NAME = 'evexiascrapy'
 # for chrome driver 
 from shutil import which
 
-ZYTE_SMARTPROXY_ENABLED = False
+ZYTE_SMARTPROXY_ENABLED = True
 ZYTE_SMARTPROXY_APIKEY = '8512f296126f460c88096edd821efe46'
 
 CONCURRENT_REQUESTS = 1

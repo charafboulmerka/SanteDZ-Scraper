@@ -26,7 +26,7 @@ class TilesSpider(scrapy.Spider):
         self.mCount = 0                   
 
     def start_requests(self):
-        for page in range(1,2681):
+        for page in range(1,5):
             url = f"https://annumed.sante-dz.com/annuaire/filter?term=&wilaya=&commune=&categorie=medecin&speciality=&distance=&page={page}"
             yield scrapy.Request(url=url, callback=self.parse)
         #  yield SeleniumRequest(url=url, callback=self.parse,screenshot=True, wait_time=10,wait_until=EC.element_to_be_clickable((By.CLASS_NAME, 'btn-primary')))
@@ -54,7 +54,8 @@ class TilesSpider(scrapy.Spider):
         #     yield scrapy.Request(profile_link, callback=self.get_rockikz_profile_data, cookies=response.request.cookies)
         profile_links = self.get_profile_links(response)
         for profile_link in profile_links:
-            yield scrapy.Request(p.urljoin("https://annumed.sante-dz.com", profile_link), callback=self.get_rockikz_profile_data, cookies=response.request.cookies)
+            yield scrapy.Request(p.urljoin("https://annumed.sante-dz.com", profile_link),
+             callback=self.get_rockikz_profile_data, cookies=response.request.cookies,meta={'profile_link':profile_link})
 
     def get_profile_links(self, response):
         # <a itemprop="url" href="/detail/medecin/noureddine-elagag?ref=intern-page">
@@ -71,20 +72,22 @@ class TilesSpider(scrapy.Spider):
                 
                 
     def is_already_in_db(self, url):
-        # self.mycursor.execute("SELECT * FROM clients WHERE url = %s", (url,))
-        # myresult = self.mycursor.fetchall()
-        # return myresult
-        return False
+         self.mycursor.execute("SELECT * FROM clients WHERE url = %s", (url,))
+         myresult = self.mycursor.fetchall()
+         return myresult
+         #return len(myresult) > 0
+         
+
             
         
     
 
     def getWilayaIndex(self,wilaya_name):
-        wilaya = ["Adrar","Chlef","Laghouat","Oum El Bouaghi","Batna","Béjaïa","Biskra","Béchar","Blida"
-        ,"Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi Ouzou","Alger","Djelfa","Jijel","Sétif","Saïda"
-        ,"Skikda","Sidi Bel Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem"
-        ,"M'Sila","Mascara","Ouargla","Oran","El Bayadh","Illizi","Bordj Bou Arréridj"
-        ,"Boumerdès","El Tarf","Tindouf","Tissemsilt","El Oued","Khenchela","Souk Ahras"
+        wilaya = ["Adrar","Chlef","Laghouat","Oum El-Bouaghi","Batna","Béjaïa","Biskra","Béchar","Blida"
+        ,"Bouira","Tamanrasset","Tébessa","Tlemcen","Tiaret","Tizi-Ouzou","Alger","Djelfa","Jijel","Sétif","Saida"
+        ,"Skikda","Sidi-Bel-Abbès","Annaba","Guelma","Constantine","Médéa","Mostaganem"
+        ,"M'sila","Mascara","Ouargla","Oran","El-Bayadh","Illizi","Bordj-Bou-Arréridj"
+        ,"Boumerdès","E -Taref","Tindouf","Tissemsilt","El-Oued","Khenchela","Souk-Ahras"
         ,"Tipaza","Mila","Aïn Defla","Naâma","Aïn Témouchent","Ghardaïa","Relizane"]
         for index, w in enumerate(wilaya):
             if w == wilaya_name:
@@ -93,6 +96,7 @@ class TilesSpider(scrapy.Spider):
 
     def get_rockikz_profile_data(self, response):
         api_url = "https://annumed.sante-dz.com/api/v1/phone"
+        profile_link = response.meta['profile_link']
         # get the csrf token in the response <input type="hidden" name="_token" value="...">
         x_csrf_token = response.css('input[name="_token"]::attr(value)').get()
         # get the data entity & place
@@ -125,7 +129,7 @@ class TilesSpider(scrapy.Spider):
             yield scrapy.FormRequest(
                 api_url, method="POST", 
                 formdata={"entity": data_entity, "id": data_place}, 
-                meta={"tags": tags, "latitude": latitude, "longitude": longitude},
+                meta={"tags": tags, "latitude": latitude, "longitude": longitude, 'profile_link':profile_link},
                 headers={
                     "pt": "text/html, */*; q=0.01",
                     "accept-encoding": "gzip, deflate, br",
@@ -184,12 +188,24 @@ class TilesSpider(scrapy.Spider):
                 'longitude': longitude,',allTagsTxt':allTagsTxt,'link': response.request.url
             }  
             self.mCount += 1
+            mycursor = self.mydb.cursor()
+            sql = "INSERT INTO clients (name, address,wilaya_id,wilaya_txt,commune_txt,url,tags_txt,type_txt,longitude, latitude,phone, department_id,created_by,created_at,updated_at ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql_created_at = "2022-12-04 13:54:14"
+            val = (name,address,wilaya_id,wilaya_txt,commune_txt,profile_link,
+            allTagsTxt,"Medecin",latitude,
+            longitude,None,3,1,sql_created_at,sql_created_at)
+
+            mycursor.execute(sql, val)
+            self.mydb.commit()
+            print(mycursor.rowcount, "record inserted.")
+            print(self.mCount)
         
         
         
     def parse_rockikz_profile_data(self, response):
         # get the name of the doctor, <h3 class="name" itemprop="name">BAKA MENNOUBA</h3>
         name = response.css('h3.name::text').get().strip()
+        profile_link = response.meta['profile_link']
         # street addresss <div itemprop="streetAddress">24 rue kriti mokhtar</div>
         street_address = response.css('div[itemprop="streetAddress"]::text').get().strip()
         # address locality <div itemprop="addressLocality"><a href="/filter/commune/287">Blida</a>, <ahref="/filter/wilaya/9">Blida</a></div>
@@ -209,6 +225,17 @@ class TilesSpider(scrapy.Spider):
             "longitude": response.meta.get("longitude"),
             "phone_number": phone_number,
         }
+        mycursor = self.mydb.cursor()
+        sql = "INSERT INTO clients (name, address,wilaya_id,wilaya_txt,commune_txt,url,tags_txt,type_txt,longitude, latitude,phone, department_id,created_by,created_at,updated_at ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        sql_created_at = "2022-12-04 13:54:14"
+        val = (name,street_address,self.getWilayaIndex(wilaya),wilaya,commune,profile_link,
+        response.meta.get("tags"),"Medecin",response.meta.get("latitude"),
+        response.meta.get("longitude"),phone_number,3,1,sql_created_at,sql_created_at)
+
+        mycursor.execute(sql, val)
+        self.mydb.commit()
+        print(mycursor.rowcount, "record inserted.")
+        print(self.mCount)
 
         
     def getProfileData(self, response):
