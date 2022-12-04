@@ -11,7 +11,7 @@ BOT_NAME = 'evexiascrapy'
 # for chrome driver 
 from shutil import which
 
-ZYTE_SMARTPROXY_ENABLED = True
+ZYTE_SMARTPROXY_ENABLED = False
 ZYTE_SMARTPROXY_APIKEY = '8512f296126f460c88096edd821efe46'
 
 CONCURRENT_REQUESTS = 1
@@ -24,8 +24,8 @@ SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
 SELENIUM_DRIVER_ARGUMENTS=['--headless']  # '--headless' if using chrome instead of firefox
   
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610,
-     'scrapy_selenium.SeleniumMiddleware': 800,
+    # 'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610,
+    #  'scrapy_selenium.SeleniumMiddleware': 800,
 
      }
 
@@ -56,7 +56,7 @@ ROBOTSTXT_OBEY = True
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = True
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -115,3 +115,5 @@ ROBOTSTXT_OBEY = True
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = '2.7'
 TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
+
+FEED_EXPORT_ENCODING = 'utf-8'
