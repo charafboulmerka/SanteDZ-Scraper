@@ -24,7 +24,7 @@ SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
 SELENIUM_DRIVER_ARGUMENTS=['--headless']  # '--headless' if using chrome instead of firefox
   
 DOWNLOADER_MIDDLEWARES = {
-    # 'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610,
+    'scrapy_zyte_smartproxy.ZyteSmartProxyMiddleware': 610,
     #  'scrapy_selenium.SeleniumMiddleware': 800,
 
      }

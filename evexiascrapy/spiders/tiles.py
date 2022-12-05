@@ -6,7 +6,7 @@ import json
 from bs4 import BeautifulSoup
 import urllib.parse as p
 import re
-import mysql.connector
+# import mysql.connector
 import html
 
 
@@ -53,6 +53,7 @@ class TilesSpider(scrapy.Spider):
         #     # yield scrapy.Request(profile_link,callback=self.getProfileData,meta={'client_type':client_type})
         #     yield scrapy.Request(profile_link, callback=self.get_rockikz_profile_data, cookies=response.request.cookies)
         profile_links = self.get_profile_links(response)
+        print("Profile links: ", profile_links)
         for profile_link in profile_links:
             yield scrapy.Request(p.urljoin("https://annumed.sante-dz.com", profile_link),
              callback=self.get_rockikz_profile_data, cookies=response.request.cookies,meta={'profile_link':profile_link})
@@ -64,6 +65,12 @@ class TilesSpider(scrapy.Spider):
         profile_links = []
         urls = response.css('a[itemprop="url"]::attr(href)').getall()
         for url in urls:
+            if not url.startswith("/detail/medecin/"):
+                continue
+            # remove query string
+            url = p.urlparse(url).path
+            if url in profile_links:
+                continue
             if self.is_already_in_db(url):
                 print(f"[***] Already in db: {url}")
                 continue
@@ -76,6 +83,7 @@ class TilesSpider(scrapy.Spider):
          myresult = self.mycursor.fetchall()
          return myresult
          #return len(myresult) > 0
+        #  return False
          
 
             
